@@ -1,19 +1,111 @@
+/**
+ * Defini cor de fundo da aplicação
+ */
+body {
+    background-color: #f5f5f5;
+}
+
+/**
+ * Header
+ */
+#header {
+    background-color: #337ab7;
+}
+.header-titulo {
+    color: white;
+}
+
+/**
+ *  Grupo de botões inserir fotos e criar álbum
+ */
+#content-box-buttons {
+    float: right;
+}
+
+/**
+ *  Conteúdo do tabs menu
+ */
+#content-tabs-menu {
+    padding-top: 40px;
+}
+
+/**
+ *  Galeria de imagens
+ */
 .galeria {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
     width: 100%;
+    height: 150px;
     background-color: #eeeeee;
+    position: relative;
 }
 .galeria:hover {
-    border: 1px solid #777;
+    box-shadow: 1px 1px 5px gray;
 }
-.galeria img {
+.galeria-foto {
     width: 100%;
-    height: 150px;
+    height: 100%;
+}
+.galeria-album {
+    width: 50px;
+    height: 50px;
+}
+.galeria-album-desc {
+    background-color: white;
+    padding: 8px;
+    color: gray;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-div.desc {
-    padding: 15px;
+/**
+ *  Slide show 
+ */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+.slideshow-content {
     text-align: center;
+}
+.slideshow-dot-container {
+    text-align:center;
+}
+.slide {
+    display:none;
+}
+.slide-img {
+    width: 100%;
+    height: 450px;;
+}
+.slide-fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.slide-desc {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.slide-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.slide-dot-active {
+  background-color: #717171;
 }

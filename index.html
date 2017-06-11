@@ -1,147 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js" ></script>
-        <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>        
-        <title>Exercício 01</title>
+        <link rel="stylesheet" href="css/style.css">    
+        <title>Gerenciador de Fotos</title>
     </head>
     <body>
-        <nav class="navbar navbar-default">
+        <!-- Componente Navbar -->
+        <nav class="navbar" id="header">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Gerenciador de fotos</a>
+                <div class="navbar-header" >
+                    <a class="navbar-brand header-titulo" href="#">Gerenciador de fotos</a>
                 </div>
+                <form class="navbar-form navbar-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Pesquisar foto">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </nav>
-        <div class="container">
-            <ul class="nav nav-pills">
-                <li class="active"><a data-toggle="pill" href="#fotos">Fotos</a></li>
-                <li><a data-toggle="pill" href="#albuns">Galeria</a></li>
-            </ul>
 
-            <section class="tab-content">
+        <!-- Componente onde serão renderizados os conteúdos da página. -->
+        <div class="container"> 
+
+            <!-- Componente dos botões de upload de foto e criar álbum -->    
+            <div id="content-box-buttons">
+                <button type="button" class="btn btn-default">Criar Álbum</button>
+                <label for="file-upload" class="btn btn-default">Fazer Upload</label>
+            </div> 
+
+            <!--Component do menu tabs -->
+            <div id="content-tabs-menu">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a data-toggle="pill" href="#fotos">Fotos</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#albuns">Galeria</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#slideshow">Slides</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Componente do conteúdo do menu tabs -->
+            <div class="tab-content">
+
+                <!-- Componente do conteúdo da opção tabs "Fotos" -->
                 <div id="fotos" class="tab-pane fade in active">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnmj6TNw5cc2vp1G2Wc-vnMDMSVL-oIU92d9op3dJSLA_KmZt_Yg" alt="Forest">
-                                </a>
-                            </div>                        
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./images/img01.jpg" class="galeria-foto">
+                                </div>                        
+                            </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6840o0vgybSoVfEj5f7oLfzNbjB87kIXdTZRA0OLyeQVdsn1DCQ" />
-                                </a>
-                            </div>                          
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./images/img02.jpg" class="galeria-foto" />
+                                </div>  
+                            </a>                        
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhnF48kLFa6WRQxnum7htJxLL6H8Xm5nZuWcV8FMYVmWM8X0btSw" />
-                                </a>
-                            </div>                           
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./images/img03.jpg" class="galeria-foto" />
+                                </div>                           
+                            </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://abrilquatrorodas.files.wordpress.com/2017/04/qr-693-carro-bons-negocios-09.jpg?quality=70&strip=all&strip=info" />
-                                </a>
-                            </div>                           
+                            <a href="#">                            
+                                <div class="galeria">
+                                    <img src="./images/img04.jpg" class="galeria-foto" />
+                                </div>                           
+                            </a>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMPyWa7UxFS_G939ZP2JIF6GsFi1IDNxx0LJ1qEPW19Y76ohXFbQ" alt="Forest" width="300" height="200">
-                                </a>
-                            </div>                        
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./images/img05.jpg" class="galeria-foto">
+                                </div>      
+                            </a>                  
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMPyWa7UxFS_G939ZP2JIF6GsFi1IDNxx0LJ1qEPW19Y76ohXFbQ" />
-                                </a>
-                            </div>                          
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./images/img06.jpg" class="galeria-foto" />
+                                </div>                          
+                            </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhnF48kLFa6WRQxnum7htJxLL6H8Xm5nZuWcV8FMYVmWM8X0btSw" />
-                                </a>
-                            </div>                           
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./images/img07.jpg" class="galeria-foto" />
+                                </div>  
+                            </a>                         
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="galeria">
-                                <a target="_blank" href="forest.jpg">
-                                    <img src="https://abrilquatrorodas.files.wordpress.com/2017/04/qr-693-carro-bons-negocios-09.jpg?quality=70&strip=all&strip=info" />
-                                </a>
-                            </div>                           
+                            <a href="#">                            
+                                <div class="galeria">
+                                    <img src="./images/img08.jpg" class="galeria-foto" />
+                                </div>
+                            </a>                           
                         </div>
                     </div>                    
-                </div>
+                </div> <!-- Fim Componente do conteúdo da opção tabs "Fotos" -->
 
+                <!-- Componente do conteúdo da opção tabs "Álbuns" -->
                 <div id="albuns" class="tab-pane fade">
                     <div class="row">
-                        <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./icon/collections.png" class="galeria-album">
+                                    <div class="galeria-album-desc">Descrição da galeria</div>
+                                </div>
+                            </a>                            
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <a href="#">
+                                <div class="galeria">
+                                    <img src="./icon/collections.png" class="galeria-album">
+                                    <div class="galeria-album-desc">Descrição da galeria</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
                             <div class="galeria">
                                 <a target="_blank" href="fjords.jpg">
-                                    <img src="./icon/collections.png" alt="Fjords" width="300" height="120" style="padding-left: 30px; padding-right: 30px; padding-top: 20px;">
+                                    <img src="./icon/collections.png" class="galeria-album">
                                 </a>
-                                <div style="background-color: white;">Descrição da galeria</div>
+                                <div class="galeria-album-desc">Descrição da galeria</div>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="galeria">
-                                <a target="_blank" href="fjords.jpg">
-                                    <img src="./icon/collections.png" alt="Fjords" width="300" height="120" style="padding-left: 30px; padding-right: 30px; padding-top: 20px;">
-                                </a>
-                                <div style="background-color: white;">Descrição da galeria</div>
-                            </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <a href="#">                            
+                                <div class="galeria">
+                                    <img src="./icon/collections.png" class="galeria-album">
+                                    <div class="galeria-album-desc">Descrição da galeria</div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="galeria">
-                                <a target="_blank" href="fjords.jpg">
-                                    <img src="./icon/collections.png" alt="Fjords" width="300" height="120" style="padding-left: 30px; padding-right: 30px; padding-top: 20px;">
-                                </a>
-                                <div style="background-color: white;">Descrição da galeria</div>
-                            </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <a href="#">                            
+                                <div class="galeria">
+                                    <img src="./icon/collections.png" class="galeria-album">
+                                    <div class="galeria-album-desc">Descrição da galeria</div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="galeria">
-                                <a target="_blank" href="fjords.jpg">
-                                    <img src="./icon/collections.png" alt="Fjords" width="300" height="120" style="padding-left: 30px; padding-right: 30px; padding-top: 20px;">
-                                </a>
-                                <div style="background-color: white;">Descrição da galeria</div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="galeria">
-                                <a target="_blank" href="fjords.jpg">
-                                    <img src="./icon/collections.png" alt="Fjords" width="300" height="120" style="padding-left: 30px; padding-right: 30px; padding-top: 20px;">
-                                </a>
-                                <div style="background-color: white;">Descrição da galeria</div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="galeria">
-                                <a target="_blank" href="fjords.jpg">
-                                    <img src="./icon/collections.png" alt="Fjords" width="300" height="120" style="padding-left: 30px; padding-right: 30px; padding-top: 20px;">
-                                </a>
-                                <div style="background-color: white;">Descrição da galeria</div>
-                            </div>
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <a href="#">                            
+                                <div class="galeria">
+                                    <img src="./icon/collections.png" class="galeria-album">
+                                    <div class="galeria-album-desc">Descrição da galeria</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </div>            
-            </section>
-        </div> 
+                </div> <!-- Fim Componente do conteúdo da opção tabs "Galeria" --> 
+                
+                <!-- Componente do conteúdo da opção tabs "Slideshow" -->
+                <div id="slideshow" class="tab-pane fade">
+                    <div class="slideshow-content">
+                        <div class="slideshow-container">
+                            <div class="slide slide-fade">
+                                <img src="./images/img01.jpg" class="slide-img">
+                                <div class="mySlides-desc">Descrição da foto</div>
+                            </div>
+
+                            <div class="slide slide-fade">
+                                <img src="./images/img02.jpg" class="slide-img">
+                                <div class="mySlides-desc">Descrição da foto</div>
+                            </div>
+
+                            <div class="slide slide-fade">
+                                <img src="./images/img03.jpg" class="slide-img">
+                                <div class="mySlides-desc">Descrição da foto</div>
+                            </div>
+                        </div>
+                        <div class="slideshow-dot-container">
+                            <span class="slide-dot"></span> 
+                            <span class="slide-dot"></span> 
+                            <span class="slide-dot"></span> 
+                        </div>
+                    </div>
+                </div> <!-- Fim Componente do conteúdo da opção tabs "Slideshow" -->
+            </div> <!-- Fim Conteúdo do menu tabs -->
+        </div> <!-- Fim Conteúdo da página. -->
     </body>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js" ></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/script.js" ></script>   
 </html>
